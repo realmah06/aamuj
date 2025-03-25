@@ -18,7 +18,7 @@
 <body>
   <div class="sidebar">
     <div class="head">
-      <i class="bi bi-list"></i>
+      <i class="bi bi-list" id="menu-show"></i>
     </div>
     <br />
     <ul>
@@ -113,7 +113,6 @@
     </ul>
   </div>
   <div class="content">
-    
       <div class="header">
         <img src="/logo.jpg" alt="logo">
         <div class="icons">
@@ -124,7 +123,14 @@
           
         </div>
       </div>
+      <br /><br /><br /><br />
       <h3>Content</h3>
+      <div class="tabs">
+        <li>Dashboard</li>
+        <li>Details Awaiting</li>
+        <li>Confirmed Details</li>
+        <li>Inventory Report</li>
+      </div>
   </div>
   <!-- Bank Transaction Popup -->
     <div id="bankTransactionPopup" class="popup-container" onclick="closePopup(event, 'bankTransactionPopup')">
