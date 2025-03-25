@@ -26,6 +26,8 @@
   }
   .login-container img{
     mix-blend-mode: multiply;
+    height: 100px;
+    width: 120px;
   }
   .login-container h2{
     font-size: 22px;
@@ -100,12 +102,34 @@
     text-align: center;
     font-weight: bold;
   }
+  @media screen and (max-width: 700px){
+    .login-container img{
+      height: 70px;
+      width: 90px;
+      margin-top: 7px;
+    }
+    .login-container h2{
+      font-size: 18px;
+    }
+    .login-container p{
+      font-size: 16px;
+    }
+    .form-group label{
+      font-size: 16px;
+    }
+    .form-group input{
+      font-size: 15.5px;
+    }
+    .form-group button{
+      font-size: 16px;
+    }
+  }
 </style>
 <body>
   <div class="login-container">
     <!-- Login Header -->
     <center>
-      <img src="logo.jpg" alt="logo" height="100" width="120">
+      <img src="logo.jpg" alt="logo">
     </center>
     <h2>A. A MUJAHEED GLOBAL ENTERPRISES</h2>
     <p>Inventory & Financial Portal...</p>
