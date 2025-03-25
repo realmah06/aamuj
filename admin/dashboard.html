@@ -17,15 +17,19 @@
 </style>
 <body>
   <div class="sidebar">
+    <div class="head">
+      <i class="bi bi-list"></i>
+    </div>
     <br />
     <ul>
-    <a href="dashboard.html"><i class="bi bi-house-check-fill"></i> &nbsp; Dashboard</a>
+    <a href="dashboard.html" class="active"><i class="bi bi-house-check-fill"></i> &nbsp; Dashboard</a>
     <a href="clients.html"><i class="bi bi-people-fill"></i>&nbsp; General Balances</a>
+   <a href="#" style="margin-top: -0.1px;"><i class="bi bi-bar-chart-fill"></i> &nbsp; Investment</a>
     
     
       <a>
-        <span><i class="bi bi-coin"></i> &nbsp; Financial Services</span>
-        <span class="icon" onclick="toggleDropdown('orders-dropdown')"><i class="bi bi-arrow-right-circle-fill"></i></span>
+        <span><i class="bi bi-coin"></i> &nbsp; Financial Services </span>
+        <span class="icon" onclick="toggleDropdown('orders-dropdown')"><i class="bi bi-arrow-down-circle-fill"></i></span>
       </a>
         <div class="dropdown-menu" id="orders-dropdown">
 <a href="#" onclick="openPopup('bankTransactionPopup')">
@@ -38,18 +42,74 @@
             <i class="bi bi-cash-stack"></i> &nbsp; Received Payment
         </a>
     </div>
+    
+    
+          <a style="margin-top: -0.1px;">
+        <span><i class="bi bi-box-seam-fill"></i> &nbsp; Supply Services</span>
+        <span class="icon" onclick="toggleDropdown('supply-dropdown')"><i class="bi bi-arrow-down-circle-fill"></i></span>
+      </a>
+        <div class="dropdown-menu" id="supply-dropdown">
+        <a href="#"><i class="bi bi-cart-plus-fill"></i> &nbsp; Place an Order </a>
+        <a href="#"><i class="bi bi-receipt"></i> &nbsp; Sales Invoice</a>
+        <a href="#"><i class="bi bi-arrow-left-right"></i> &nbsp; Inter-Store Transfer</a>
+        <a href="#"><i class="bi bi-shop"></i> &nbsp; Store Adjustment</a>
+        <a href="#"><i class="bi bi-repeat"></i> &nbsp; Order Refund</a>
+    </div>
+    
+    
+      <a style="margin-top: -0.1px;">
+        <span><i class="bi bi-boxes"></i> &nbsp; Delivery Services</span>
+        <span class="icon" onclick="toggleDropdown('delivery-dropdown')"><i class="bi bi-arrow-down-circle-fill"></i></span>
+      </a>
+        <div class="dropdown-menu" id="delivery-dropdown">
+        <a href="#"><i class="bi bi-cart-plus-fill"></i> &nbsp; Load to Company </a>
+        <a href="#"><i class="bi bi-receipt"></i> &nbsp; Load to Store</a>
+        <a href="#"><i class="bi bi-repeat"></i> &nbsp; Delivery Refund</a>
+    </div>
+    
+    
+    <a style="margin-top: -0.1px;">
+        <span><i class="bi bi-person-fill-add"></i> &nbsp; Registration</span>
+        <span class="icon" onclick="toggleDropdown('registration-dropdown')"><i class="bi bi-arrow-down-circle-fill"></i></span>
+      </a>
+        <div class="dropdown-menu" id="registration-dropdown">
+        <a href="#"><i class="bi bi-cart-plus-fill"></i> &nbsp; Product  Setup</a>
+        <a href="#"><i class="bi bi-person-fill-add"></i> &nbsp; Property Setup</a>
+        <br />
+        
+        <span style="color: #aaa;">Personal</span>
+        <a href="#" onclick="openPopup('bankSetupPopup')"><i class="bi bi-person-fill-add"></i> &nbsp;  Banking Setup</a>
+        <a href="#" onclick="openPopup('expensesSetupPopup')"><i class="bi bi-person-fill-add"></i> &nbsp;  Expenses Setup</a>
+        
+        <span style="color: #aaa;">Individual</span>
+          <a href="#" onclick="openPopup('customerSetupPopup')"><i class="bi bi-person-fill-add"></i> &nbsp; Customer Setup</a>
+          <a href="#" onclick="openPopup('percentageSetupPopup')"><i class="bi bi-person-fill-add"></i> &nbsp; Percentage Setup</a>
+          
+          <span style="color: #aaa;">Suppliers</span>
+          <a href="#" onclick="openPopup('vendorSetupPopup')"><i class="bi bi-person-fill-add"></i> &nbsp; Vendor Setup</a>
+          <a href="#" onclick="openPopup('agentSetupPopup')"><i class="bi bi-person-fill-add"></i> &nbsp; Agent Setup</a>
+          <a href="#" onclick="openPopup('agentSetupPopup')"><i class="bi bi-person-fill-add"></i> &nbsp; Logistics Setup</a>
+          
+          <span style="color: #aaa;">Sources</span>
+          <a href="#" onclick="openPopup('partnerSetupPopup')"><i class="bi bi-person-fill-add"></i> &nbsp; Partner Setup</a>
+          <a href="#" onclick="openPopup('purchasersSetupPopup')"><i class="bi bi-person-fill-add"></i> &nbsp; Purchasers Setup</a>
+          
+          <span style="color: #aaa;">Investment</span>
+          <a href="#" onclick="openPopup('stakeholdersSetupPopup')"><i class="bi bi-person-fill-add"></i> &nbsp; Stakeholders Setup</a>
+          <a href="#" onclick="openPopup('profitSetupPopup')"><i class="bi bi-person-fill-add"></i> &nbsp; Profit Setup</a>
+          
+          <span style="color: #aaa;">Staffs & Users</span>
+          <a href="#" onclick="openPopup('employeeSetupPopup')"><i class="bi bi-person-fill-add"></i> &nbsp; Employee Setup</a>
+          <a href="#" onclick="openPopup('userSetupPopup')"><i class="bi bi-person-fill-add"></i> &nbsp; User Setup</a>
+    </div>
+       <a href="#" style="margin-top: -0.1px;"><i class="bi bi-chat-left-text-fill"></i> &nbsp; Messages</a>
        
+       <a href="#" style="margin-top: -0.1px;"><i class="bi bi-cloud-haze-fill"></i> &nbsp; Report</a>
+       
+       <a href="#" style="margin-top: -0.1px;"><i class="bi bi-gear-wide-connected"></i> &nbsp; Settings</a>
+       
+       <a href="#" style="margin-top: -0.1px;"><i class="bi bi-box-arrow-left"></i> &nbsp; Logout</a>
         
-        
-        <a>
-            <span>Settings</span>
-            <span class="icon" onclick="toggleDropdown('settings-dropdown')"><i class="bi bi-arrow-right-circle-fill"></i></span>
-        </a>
-        <div class="dropdown-menu" id="settings-dropdown">
-            <a href="#">Profile</a>
-            <a href="#">Security</a>
-            <a href="#">Notifications</a>
-        </div>
     </ul>
   </div>
   <div class="content">
@@ -69,7 +129,7 @@
   <!-- Bank Transaction Popup -->
     <div id="bankTransactionPopup" class="popup-container" onclick="closePopup(event, 'bankTransactionPopup')">
         <div class="popup-content" onclick="event.stopPropagation()">
-            <h3> <i class="bi bi-bank2"></i> bank transaction</h3>
+            <h3> <i class="bi bi-bank2"></i> Transfer to Others</h3>
             <span class="close-btn" onclick="closePopup(event, 'bankTransactionPopup')"><i class="bi bi-x-circle-fill"></i></span>
             
             
@@ -91,6 +151,16 @@
         <div class="popup-content" onclick="event.stopPropagation()">
             <span class="close-btn" onclick="closePopup(event, 'paymentPopup')"><i class="bi bi-x-circle-fill"></i></span>
             <h3>Received Payment</h3>
+            
+            
+        </div>
+    </div>
+    
+      <!-- Bank Transaction Popup -->
+    <div id="bankSetupPopup" class="popup-container" onclick="closePopup(event, 'bankSetupPopup')">
+        <div class="popup-content" onclick="event.stopPropagation()">
+            <h3> <i class="bi bi-bank2"></i> Bank Setup</h3>
+            <span class="close-btn" onclick="closePopup(event, 'bankTransactionPopup')"><i class="bi bi-x-circle-fill"></i></span>
             
             
         </div>
