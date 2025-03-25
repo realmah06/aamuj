@@ -4,6 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>A A Mujaheed | Login</title>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <style>
   body{
@@ -102,6 +103,20 @@
     text-align: center;
     font-weight: bold;
   }
+  .confirm-swal-btn{
+    background-color: #114582;
+    padding: 10px 15px;
+    font-size: 17px;
+  }
+  .cancel-swal-btn{
+    background-color: darkred;
+    padding: 10px 15px;
+    font-size: 17px;
+  }
+  .custom-swal-title{
+    font-size: 26px;
+    font-weight: bold;
+  }
   @media screen and (max-width: 700px){
     body{
       background-color: #1D2B38;
@@ -172,5 +187,70 @@
       &copy;aamujaheed@care.com 2025
     </footer>
   </div>
+<script>
+document.getElementById('loginForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    var username = document.getElementById('username').value.trim();
+    var password = document.getElementById('password').value.trim();
+
+    // Validation for empty fields
+    if (username === '' || password === '') {
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops!',
+            text: 'Username and Password are required!'
+        });
+        return; // Stop further execution
+    }
+
+    // Confirmation alert before login with preConfirm loader
+    Swal.fire({
+        icon: 'warning',
+        title: 'Login to Dashboard?',
+        showCancelButton: true,
+        cancelButtonText: 'Discard',
+        confirmButtonText: 'Login',
+        allowOutsideClick: false,
+        customClass: {
+            confirmButton: 'confirm-swal-btn',
+            cancelButton: 'cancel-swal-btn',
+            title: "custom-swal-title",
+        },
+        preConfirm: () => {
+            return new Promise((resolve) => {
+                Swal.showLoading(); // Show SweetAlert's built-in loader
+                setTimeout(() => {
+                    if (username === 'maahdi' && password === 'm$muj$_06') {
+                        resolve();
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Congratulations',
+                            text: 'Welcome back to ADMIN Dashboard',
+                            timer: 5000,
+                            customClass: {
+                              confirmButton: 'confirm-swal-btn',
+                              cancelButton: 'cancel-swal-btn',
+                              title: "custom-swal-title",
+                          },
+                            showConfirmButton: true
+                        }).then(() => {
+                            window.location.href = 'admin/dashboard.html'; // Redirect
+                        });
+                    } else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Login Failed!',
+                            text: 'Invalid Username or Password.'
+                        });
+                    }
+                }, 2000); // Simulate processing delay
+            });
+        }
+    });
+});
+
+</script>
+
 </body>
 </html>
